@@ -5,12 +5,14 @@ import android.app.Activity;
 import android.view.Menu;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Spinner;
 
 public class MainActivity extends Activity {
 
 	EditText txtN1;
 	EditText txtN2;
 	EditText txtRP;
+	Spinner spinner;
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +22,7 @@ public class MainActivity extends Activity {
         txtN1 = (EditText) findViewById(R.id.txtN1);
         txtN2 = (EditText) findViewById(R.id.txtN2);
         txtRP = (EditText) findViewById(R.id.txtRP);
+        spinner = (Spinner) findViewById(R.id.spinner1);
     }
 
     @Override
@@ -30,9 +33,26 @@ public class MainActivity extends Activity {
     }
     
     public void btnSumar(View v) {
+    	int operador = spinner.getSelectedItemPosition();
     	int n1 = Integer.parseInt(txtN1.getText().toString());
     	int n2 = Integer.parseInt(txtN2.getText().toString());
-    	int rp = n1 + n2;
+    	int rp = 0;
+    	
+    	switch(operador){
+    	case 0:
+    		rp= n1 + n2;
+    		break;
+    	case 1:
+    		rp= n1 - n2;
+    		break;
+    	case 2:
+    		rp= n1 * n2;
+    		break;
+    	case 3:
+    		rp= n1 / n2;
+    		break;
+    	}
+    	
     	txtRP.setText(String.valueOf(rp));
     }
 }

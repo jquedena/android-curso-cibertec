@@ -15,4 +15,11 @@
     <string name="n1_hint">Ingresar N1(1)</string>
     <string name="n2_hint">Ingresar N2(1)</string>
     <color name="text_color">#0000FF</color>
+    
+    <string-array name="operadores">
+        <item>Sumar</item>
+        <item>Restar</item>
+        <item>Producto</item>
+        <item>División</item>
+    </string-array>
 </resources>
